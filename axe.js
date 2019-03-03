@@ -8,17 +8,20 @@ var chromeOptions = {'args': ['--test-type']};
 chromeCapabilities.set('chromeOptions', chromeOptions);
 
 var driver = new WebDriver.Builder().withCapabilities(chromeCapabilities).build();
-var url = "YourWebsiteNameGoesHere";
+/*Assign this variable the value of your website URL 
+var url = "YourWebsiteNameGoesHere";*/
 executeTask(driver, url);
 
 async function executeTask (driver, url) {
     try{
        driver.get(url);
         driver.manage().window().maximize();
-        //In case you have a website that requires login, provide credentials and login button details here
-       // await driver.findElement(WebDriver.By.id("userName")).sendKeys("yourUserName");
-       // await driver.findElement(WebDriver.By.id("password")).sendKeys("yourPassword");
-       // await driver.findElement(WebDriver.By.className("yourLoginButtonClass")).click()
+        
+      /* In case you have a website that requires login, provide credentials and login button details here
+        await driver.findElement(WebDriver.By.id("userName")).sendKeys("yourUserName");
+        await driver.findElement(WebDriver.By.id("password")).sendKeys("yourPassword");
+        await driver.findElement(WebDriver.By.className("yourLoginButtonClass")).click(); */
+        
         driver.executeScript("var previewFrames = window.document.getElementsByTagName('iframe');\
         for(var i=0; i< previewFrames.length; i++){;\
         var previewFrame = previewFrames[i];\
